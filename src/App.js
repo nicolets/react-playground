@@ -1,23 +1,48 @@
-import logo from './logo.svg';
+import Initials from './Initials';
+import DayOfWeek from './DayOfWeek';
+import Menu from './Menu/Menu';
+import MenuItem from './Menu/MenuItem/MenuItem';
+import Counter from './Counter/Counter';
+import StudentPicker from './StudentPicker';
+import Article from './Article/Article';
+import RandomColorSquare from './RandomColorSquare/RandomColorSquare'
 import './App.css';
 
 function App() {
+  
+  function clickHandler() {
+    console.log('you clicked')
+  }
+  
+//אפשר היה לעשות תגית פותחת וסוגרת במניואייטם ולהכניס לבפנים את הלינק והלייבל
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Menu>
+        <MenuItem label="Homepage" link="/" />  
+        <MenuItem label="Gallery" link="/Gallery" />
+        <MenuItem label="Contact" link="/Contact" />
+      </Menu>
+      ---------------
+      <div>
+        <button onClick={clickHandler}>Click me</button> 
+      </div>
+      ---------------
+      <Counter />
+      ---------------
+      <StudentPicker />
+      ---------------
+      <Initials name={"Nicole Tsingauz"} />
+      <Initials name="Evyatar Rosner" />
+      ---------------
+      <DayOfWeek day={6} />
+      <DayOfWeek day={4} />
+      ---------------
+      <Article 
+        title="Why the world needs Superman?" 
+        content="long article..."/>
+      ---------------
+      <RandomColorSquare />
     </div>
   );
 }
